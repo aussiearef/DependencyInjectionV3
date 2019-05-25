@@ -10,9 +10,9 @@ There is an implementation of IDataService that works with SQL Server. It is cal
 
 If you would like to switch to SQL Server you must do the following:
 
-1- Create an empty new database in your SQL Server (or SQL Server Express)
-2- Open script file from PersonalBlog\DatabaseScripts folder [(this one)](https://github.com/aussiearef/DependencyInjectionV2/blob/master/PersonalBlog/DatabaseScripts/Create_All_Objects.sql)
-3- Run the script on the newly created databases to have the tables and stored procedures created
-4- Go to appsettings.json, and update the "SqlConnection" key with the proper connection string that works with your database
-5- Go to Startup.cs, and comment out the existing "ConfigureDataService" method which works with DynamoDB
-6- Uncomment "ConfigureDataService" that works with SqlServer (injects SqlServerDataService)
+1. Create an empty new database in your SQL Server (or SQL Server Express)
+2. Open script file from PersonalBlog\DatabaseScripts folder [(this one)](https://github.com/aussiearef/DependencyInjectionV2/blob/master/PersonalBlog/DatabaseScripts/Create_All_Objects.sql)
+3. Run the script on the newly created databases to have the tables and stored procedures created
+4. Go to appsettings.json, and update the "SqlConnection" key with the proper connection string that works with your database
+5. Go to Startup.cs, and comment out the existing "ConfigureDataService" method which works with DynamoDB
+6. Uncomment "ConfigureDataService" that works with SqlServer (injects SqlServerDataService)
