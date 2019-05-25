@@ -53,6 +53,11 @@ namespace PersonalBlog
             services.AddScoped<IDataService, DynanmoDbDataService>();
         }
 
+        //private void ConfigureDataService(IServiceCollection services)
+        //{
+        //    services.AddScoped<IDataService, SqlServerDataService>();
+        //}
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -14,15 +14,14 @@ namespace PersonalBlog.Strategies
         }
         public void OnActionExecuted(ActionExecutedContext context)
         {
-            if (!_authorizer.IsAuthorized())
-            {
-                context.Result = new RedirectToActionResult("Error", "Home",null);
-            }
         }
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            throw new NotImplementedException();
+            if (!_authorizer.IsAuthorized())
+            {
+                context.Result = new RedirectToActionResult("Error", "Home", null);
+            }
         }
     }
 }
