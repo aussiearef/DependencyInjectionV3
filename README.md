@@ -1,8 +1,8 @@
 # DependencyInjectionV2
-## Sample codes of ["Dependency Injection With .NET Core 3"](https://www.udemy.com/dependency-injection-in-net-core-2-and-aspnet-core-2/?couponCode=REFLECTIONINCRS) course on Udemy
+## Sample codes of ["Dependency Injection With .NET "](https://www.udemy.com/dependency-injection-in-net-core-2-and-aspnet-core-2/?couponCode=REFLECTIONINCRS) course on Udemy
 
 ## Personal Blog
-This simple code is to demonstrate how to do simple operations with DI in .NET Core and ASP.NET Core
+This simple code is to demonstrate how to do simple operations with DI in .NET  and ASP.NET Core
 By default, it uses AWAS DynamoDB. To use DynamoDB, you must create your own local .aws account profile and include "user key", "secret key" and "region" in it.
 
 ### If you do not have access to AWS and AWS DynamoDB:
