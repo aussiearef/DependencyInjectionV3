@@ -1,4 +1,4 @@
-# DependencyInjectionV2
+# Dependency Injection with .NET , 3rd Edition
 ## Sample codes of ["Dependency Injection With .NET "](https://www.udemy.com/dependency-injection-in-net-core-2-and-aspnet-core-2/?couponCode=REFLECTIONINCRS) course on Udemy
 
 ## Personal Blog
