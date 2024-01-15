@@ -1,13 +1,25 @@
-﻿public class UserInterface
+﻿using Microsoft.Extensions.DependencyInjection;
+
+IServiceCollection collection = new ServiceCollection();
+collection.AddScoped<IDataAccess, DataAccessMySQL>();
+collection.AddScoped<IBusiness, Business>();
+collection.AddScoped<UserInterface>();
+
+IServiceProvider provider = collection.BuildServiceProvider();
+
+UserInterface ui = provider.GetService<UserInterface>();
+ui.Signup();
+
+public class UserInterface
 {
     private string _userName;
     private string _password;
 
     private IBusiness _business;
 
-    public UserInterface()
+    public UserInterface(IBusiness business)
     {
-        _business = new Business();
+        _business = business;
     }
     private void GetData()
     {
@@ -35,9 +47,9 @@ public class Business : IBusiness
 {
     private IDataAccess _dataAccess;
 
-    public Business()
+    public Business(IDataAccess dataAccess)
     {
-        _dataAccess = new DataAccessMySQL();
+        _dataAccess = dataAccess;
     }
     public void SignUp(string userName, string password)
     {

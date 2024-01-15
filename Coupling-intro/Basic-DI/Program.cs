@@ -1,13 +1,19 @@
-﻿public class UserInterface
+﻿
+IDataAccess da = new DataAccessMySQL();
+IBusiness biz = new Business(da);
+UserInterface ui = new UserInterface(biz);
+ui.Signup();
+
+public class UserInterface
 {
     private string _userName;
     private string _password;
 
     private IBusiness _business;
 
-    public UserInterface()
+    public UserInterface(IBusiness business)
     {
-        _business = new Business();
+        _business = business;
     }
     private void GetData()
     {
@@ -35,9 +41,9 @@ public class Business : IBusiness
 {
     private IDataAccess _dataAccess;
 
-    public Business()
+    public Business(IDataAccess dataAccess)
     {
-        _dataAccess = new DataAccessMySQL();
+        _dataAccess = dataAccess;
     }
     public void SignUp(string userName, string password)
     {

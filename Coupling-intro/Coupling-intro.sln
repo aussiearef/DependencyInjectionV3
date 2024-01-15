@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coupling-intro", "Coupling-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coupling-Reduced", "Coupling-Reduced\Coupling-Reduced.csproj", "{234B8133-05DD-4A35-B331-9B967E0BB90F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceCollection", "ServiceCollection\ServiceCollection.csproj", "{4378B960-772B-42C0-9724-73BC2F4CA5BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basic-DI", "Basic-DI\Basic-DI.csproj", "{0980B091-22CA-4541-9DDD-340101B79F0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{234B8133-05DD-4A35-B331-9B967E0BB90F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{234B8133-05DD-4A35-B331-9B967E0BB90F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{234B8133-05DD-4A35-B331-9B967E0BB90F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4378B960-772B-42C0-9724-73BC2F4CA5BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4378B960-772B-42C0-9724-73BC2F4CA5BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4378B960-772B-42C0-9724-73BC2F4CA5BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4378B960-772B-42C0-9724-73BC2F4CA5BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0980B091-22CA-4541-9DDD-340101B79F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0980B091-22CA-4541-9DDD-340101B79F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0980B091-22CA-4541-9DDD-340101B79F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0980B091-22CA-4541-9DDD-340101B79F0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
