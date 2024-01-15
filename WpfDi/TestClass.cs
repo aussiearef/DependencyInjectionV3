@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace WpfDi;
 
-namespace WpfDi
+public class TestClass
 {
-    public class TestClass
-    {
-        public string Message => "Hello";
-    }
+    public string Message => "Hello";
 }
