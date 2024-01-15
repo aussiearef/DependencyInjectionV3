@@ -1,6 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
+# Created by Aref Karimi - Dependency Injection with .NET course 
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScopedVSTransient", "ScopedVSTransient\ScopedVSTransient.csproj", "{AEB6C1C7-4453-4345-B2BB-978534F23C63}"
