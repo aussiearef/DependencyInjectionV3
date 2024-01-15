@@ -1,39 +1,31 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
-using System.Threading;
 using System.Threading.Tasks;
 
-namespace ScopedVSTransient
+Console.Clear();
+var collection = new ServiceCollection();
+collection.AddScoped<Scoped>();
+collection.AddTransient<Transient>();
+
+var provider = collection.BuildServiceProvider();
+Parallel.For(1, 10, i =>
 {
+    var scopedObject = provider.GetService<Scoped>();
+    var transientObject = provider.GetService<Transient>();
+    
+    Console.WriteLine($"Scope ID:{scopedObject.GetHashCode()}");
+    Console.WriteLine($"Transient ID: {transientObject.GetHashCode()}");
+});
 
-    public class ScopedClass
-    {
-    }
+Console.Write("Press a key");
+Console.ReadKey();
 
-    public class TransientClass
-    {
+public class Scoped
+{
+    
+}
 
-    }
-
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            var collection = new ServiceCollection();
-            collection.AddScoped<ScopedClass>();
-            collection.AddTransient<TransientClass>();
-
-            var builder = collection.BuildServiceProvider();
-
-            Console.Clear();
-            Parallel.For(1, 10, i => {
-                Console.WriteLine($"Scoped ID = {builder.GetService<ScopedClass>().GetHashCode().ToString()}");
-                Console.WriteLine($"Transient ID = {builder.GetService<TransientClass>().GetHashCode().ToString()}");
-            });
-
-
-            Console.WriteLine("Press a key");
-            Console.ReadKey();
-        }
-    }
+public class Transient
+{
+    
 }
