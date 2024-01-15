@@ -1,8 +1,7 @@
-﻿namespace ConditionalResolve
+﻿namespace ConditionalResolve;
+
+public enum UserLocations
 {
-    public enum UserLocations
-    {
-        Europe,
-        Australia
-    }
+    Europe,
+    Australia
 }

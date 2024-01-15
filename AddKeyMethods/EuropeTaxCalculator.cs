@@ -1,4 +1,5 @@
-﻿namespace ConditionalResolve;
+﻿
+namespace AddKeyMethods;
 
 public class EuropeTaxCalculator : ITaxCalculator
 {

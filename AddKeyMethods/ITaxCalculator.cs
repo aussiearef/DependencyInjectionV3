@@ -1,4 +1,4 @@
-﻿namespace ConditionalResolve;
+﻿namespace AddKeyMethods;
 
 public interface ITaxCalculator
 {
