@@ -1,18 +1,22 @@
-# Dependency Injection with .NET , 3rd Edition
-## Sample codes of ["Dependency Injection With .NET "](https://www.udemy.com/dependency-injection-in-net-core-2-and-aspnet-core-2/?couponCode=REFLECTIONINCRS) course on Udemy
+# Dependency Injection with .NET, 3rd Edition
+## Sample codes of ["Dependency Injection With .NET "](https://www.udemy.com/course/dependency-injection-in-net-core-2-and-aspnet-core-2/?referralCode=648F7F114AAC06731A07) course on Udemy
 
-## Personal Blog
-This simple code is to demonstrate how to do simple operations with DI in .NET  and ASP.NET Core
-By default, it uses AWAS DynamoDB. To use DynamoDB, you must create your own local .aws account profile and include "user key", "secret key" and "region" in it.
+[![](https://img-b.udemycdn.com/course/750x422/1598064_46f0_8.jpg)](https://www.udemy.com/course/dependency-injection-in-net-core-2-and-aspnet-core-2/?referralCode=648F7F114AAC06731A07) 
 
-### If you do not have access to AWS and AWS DynamoDB:
-There is an implementation of IDataService that works with SQL Server. It is called SqlServerDataService
 
-If you would like to switch to SQL Server you must do the following:
 
-1. Create an empty new database in your SQL Server (or SQL Server Express)
-2. Open script file from PersonalBlog\DatabaseScripts folder [(this one)](https://github.com/aussiearef/DependencyInjectionV2/blob/master/PersonalBlog/DatabaseScripts/Create_All_Objects.sql)
-3. Run the script on the newly created databases to have the tables and stored procedures created
-4. Go to appsettings.json, and update the "SqlConnection" key with the proper connection string that works with your database
-5. Go to Startup.cs, and comment out the existing "ConfigureDataService" method which works with DynamoDB
-6. Uncomment "ConfigureDataService" that works with SqlServer (injects SqlServerDataService)
+ This repository includes several .NET projects to demonstrate various dependency injection features in . NET. Currently, the minimum version of .NET needed to run these projects is .NET 8.
+
+
+
+## The Personal Blog
+
+Personal Blog is an application that demonstrates how to do simple operations with DI in ASP.NET Core. The project implements a straightforward personal notes application.
+
+This project can use both AWS DynamoDB and SQL Server as its storage. 
+
+To use AWS and its DynamoDB service, register DynamoDbDataService with the DI container in program.cs .
+To use SQL Server, use SqlServerDataService and register it with the DI container in program.cs .
+
+If you wish to use SQL Server, make sure you run the Create_All_Objects.sql file, which is in the DatabaseScripts folder, first. It will create a database called "personalblog" along with all the required database objects. Then you must update the connection string in appSettings.json properly so that the application can connect to SQL Server.
+
