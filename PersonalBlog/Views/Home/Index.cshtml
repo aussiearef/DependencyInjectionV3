@@ -1,11 +1,12 @@
-﻿@model List<Post>
+﻿@using PersonalBlog.Interface
+@model List<Post>
 @{
     ViewData["Title"] = "Home Page";
 }
 
-@inject PersonalBlog.Interface.IAuthorizer authorizer;
+@inject IAuthorizer Authorizer;
 
-@if (authorizer.IsAuthorized())
+@if (Authorizer.IsAuthorized())
 {
     <div class="m-1">
         <a asp-action="CreatePost" class="btn btn-primary">Create Post</a>
@@ -24,13 +25,9 @@
                     <h6>published on @post.PostDateTime.ToShortDateString()</h6>
                     <p class="card-text">@content</p>
                 </div>
-                <div class="card-footer">
-                    <small class="text-muted"><a asp-action="#">See More...</a></small>
 
-                </div>
 
             </div>
-
         }
     }
 </div>

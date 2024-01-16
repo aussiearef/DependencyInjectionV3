@@ -1,12 +1,11 @@
-﻿using PersonalBlog.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using PersonalBlog.Models;
 
-namespace PersonalBlog.Interface
+namespace PersonalBlog.Interface;
+
+public interface IDataService
 {
-    public interface IDataService
-    {
-        Task Create(Post model);
-        Task<List<Post>> GetAll();
-    }
+    Task Create(Post model);
+    Task<List<Post>> GetAll();
 }

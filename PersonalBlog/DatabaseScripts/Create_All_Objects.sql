@@ -1,17 +1,23 @@
-USE personalblog;
+Create DATABASE personalblog
+Go
+
+USE
+personalblog;
 GO
 
 CREATE TABLE POSTS
 (
- Id UniqueIdentifier not null primary key,
- PostDateTime DateTime not null default(getdate()),
- Title varchar(max) not null,
+    Id           UniqueIdentifier not null primary key,
+    PostDateTime DateTime         not null default (getdate()),
+    Title        varchar(max
+) not null,
  Content varchar(max) not null
 )
 
-GO
+    GO
 
-CREATE PROC CREATE_POST
+CREATE
+PROC CREATE_POST
 	@Id UniqueIdentifier,
 	@PostDateTime DateTime,
 	@Title varchar(max),
@@ -21,9 +27,10 @@ AS
 	VALUES (@Id, @PostDateTime, @Title, @Content)
 Go
 
-CREATE PROC GET_ALL
+CREATE
+PROC GET_ALL
 AS
-	SELECT Id, PostDateTime, Title, Content
-	From Posts
+SELECT Id, PostDateTime, Title, Content
+From Posts
 
-GO
+    GO

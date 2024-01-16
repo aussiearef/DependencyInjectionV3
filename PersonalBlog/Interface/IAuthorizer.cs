@@ -1,8 +1,6 @@
-﻿
-namespace PersonalBlog.Interface
+﻿namespace PersonalBlog.Interface;
+
+public interface IAuthorizer
 {
-    public interface IAuthorizer
-    {
-        bool IsAuthorized();
-    }
+    bool IsAuthorized();
 }

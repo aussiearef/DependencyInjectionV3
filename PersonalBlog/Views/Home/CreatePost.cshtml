@@ -2,12 +2,12 @@
 @{
     ViewData["Title"] = "Create Post";
 }
-<input type="hidden" asp-for="Id" />
+<input type="hidden" asp-for="Id"/>
 <form asp-controller="Home" asp-action="Post" method="post">
     <div class="form-group">
         <label asp-for="Title">Title:</label><br/>
         <input type="text" class="form-control w-75"
-               asp-for="Title" placeholder="Enter the title of your post here" />
+               asp-for="Title" placeholder="Enter the title of your post here"/>
     </div>
 
     <div class="form-group">
@@ -16,4 +16,3 @@
     </div>
     <button type="submit" class="btn btn-primary">Post</button>
 </form>
-

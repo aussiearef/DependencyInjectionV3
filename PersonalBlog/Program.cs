@@ -1,26 +1,43 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
+using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.DataModel;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using PersonalBlog.Interface;
+using PersonalBlog.Strategies;
 
-namespace PersonalBlog
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<CookiePolicyOptions>(options => { options.CheckConsentNeeded = context => true; });
+
+ConfigureServices(builder.Services);
+ConfigureDataServices(builder.Services);
+
+var app = builder.Build();
+
+app.UseRouting().UseStaticFiles().UseCookiePolicy().UseAuthorization();
+
+app.MapDefaultControllerRoute();
+
+app.Run();
+
+
+void ConfigureServices(IServiceCollection builderServices)
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
+    builderServices.AddControllers();
+    builderServices.AddRazorPages();
+    builderServices.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+    builderServices.AddScoped<IAuthorizer, IpBasedAuthorizer>();
+    builderServices.AddScoped<ProtectorAttribute>();
+    builderServices.AddLogging(c => c.AddConsole());
+}
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
-    }
+void ConfigureDataServices(IServiceCollection serviceCollection)
+{
+    var client = new AmazonDynamoDBClient();
+    var context = new DynamoDBContext(client);
+    serviceCollection.AddSingleton<IDynamoDBContext>(context);
+    //serviceCollection.AddScoped<IDataService, DynanmoDbDataService>();
+    serviceCollection.AddScoped<IDataService, SqlServerDataService>();
 }

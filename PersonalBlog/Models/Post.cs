@@ -2,23 +2,16 @@
 using System.ComponentModel.DataAnnotations;
 using Amazon.DynamoDBv2.DataModel;
 
-namespace PersonalBlog.Models
+namespace PersonalBlog.Models;
+
+[DynamoDBTable("blog")]
+public class Post
 {
-    [DynamoDBTable(tableName:"blog")]
-    public class Post
-    {
-        public Post()
-        {
-            Id = Guid.NewGuid().ToString();
-            PostDateTime = DateTime.Now;
-        }
+    [DynamoDBHashKey] public string Id { get; set; } = Guid.NewGuid().ToString();
 
-        [DynamoDBHashKey]
-        public string Id { get; set; } 
-        public DateTime PostDateTime { get; set; }
+    public DateTime PostDateTime { get; set; } = DateTime.Now;
 
-        [Required]
-        public string Title { get; set; }
-        public string Content { get; set; }
-    }
+    [Required] public string Title { get; set; }
+
+    public string Content { get; set; }
 }
