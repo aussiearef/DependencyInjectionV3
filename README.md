@@ -20,3 +20,8 @@ To use SQL Server, use SqlServerDataService and register it with the DI containe
 
 If you wish to use SQL Server, make sure you run the Create_All_Objects.sql file, which is in the DatabaseScripts folder, first. It will create a database called "personalblog" along with all the required database objects. Then you must update the connection string in appSettings.json properly so that the application can connect to SQL Server.
 
+## More Free Courses on YouTube!
+
+[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-red?style=flat&logo=youtube)](http://www.youtube.com/@FreeTechnologyLectures)
+
+Subscribe to the Free Technology and Technology Management Courses channel for regular free lectures about Coding, DevOps, and Technology Management. [Click Here to View the YouTube Channel](http://www.youtube.com/@FreeTechnologyLectures).
