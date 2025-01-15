@@ -5,7 +5,7 @@
 
 
 
- This repository includes several .NET projects to demonstrate various dependency injection features in . NET. Currently, the minimum version of .NET needed to run these projects is .NET 8.
+ This repository includes several .NET projects to demonstrate various dependency injection features. NET. Currently, the minimum version of .NET needed to run these projects is .NET 9.
 
 
 
@@ -15,19 +15,9 @@ Personal Blog is an application that demonstrates how to do simple operations wi
 
 This project can use both AWS DynamoDB and SQL Server as its storage. 
 
-To use AWS and its DynamoDB service, register DynamoDbDataService with the DI container in program.cs .
-To use SQL Server, use SqlServerDataService and register it with the DI container in program.cs .
+To use AWS and its DynamoDB service, register DynamoDbDataService with the DI container in program.cs.
+To use SQL Server, use SqlServerDataService and register it with the DI container in the program.cs 
 
-If you wish to use SQL Server, make sure you run the Create_All_Objects.sql file, which is in the DatabaseScripts folder, first. It will create a database called "personalblog" along with all the required database objects. Then you must update the connection string in appSettings.json properly so that the application can connect to SQL Server.
+If you want to use SQL Server, please first run the Create_All_Objects.sql file in the DatabaseScripts folder. This will create a" personal blog" database with all required objects. Then, you must adequately  update the connection string in appSettings JSON so the application can connect to the SQL Server.
 
-## More Free Courses on YouTube!
 
-[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-red?style=flat&logo=youtube)](http://www.youtube.com/@FreeTechnologyLectures)
-
-Subscribe to the Free Technology and Technology Management Courses channel for regular free lectures about Coding, DevOps, and Technology Management. [Click Here to View the YouTube Channel](http://www.youtube.com/@FreeTechnologyLectures).
-
-## Buy me a coffee ☕
-
-If you find my work helpful, consider treating me by buying me a coffee!
-
-<a href="https://ko-fi.com/arefkarimi"><img src="https://storage.ko-fi.com/cdn/kofi2.png?v=3" alt="ko-fi" height="36"></a>
